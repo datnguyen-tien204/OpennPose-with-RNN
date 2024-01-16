@@ -18,22 +18,55 @@ This project provides an implementation anomaly detection of OpenPose + RNN. For
 as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr.Minh Chuan-Pham and Dr.Quoc Viet-Hoang supported for this project
 # Introduction
 ### Tracking People
-<p align="center">
-    <img src="github/images_introduction/cheating.jpg" width="360">
-</p>
 Another field that is rapidly developing and showing even greater potential in the future is the detection of cheating among candidates using AI. When operational, this system marks and captures images if it detects any anomalies or violations, sending them to Telegram for verification of the misconduct. The reliability of this system is currently at a credible level and is undergoing further development and testing.
 
-This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, among others. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
+This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, among others. Some universities such as Tsinghua University, Peking University, Standford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
 
 # Results
-
-### Cheating Recognition ( using OpenPose)
+### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Netword)
 <p align="center">
-    <img src="github/video/5533218175348215452 (1)" width="1000">
+    <img src="github/video/video_demo.gif" width="1000">
     <br>
     <sup>Testing with 12422TN class <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><i> on OpenPose </i></a>
 </p>
 
+### For Human Detection
+For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is slpit from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
+
+**Table 1. Comparison resukt of human detection in images with 3 other models**
+|    Models   | Avg. | Precision |  IoU |
+|:-----------:|:----:|:---------:|:----:|
+| [Faster-RCNN](https://arxiv.org/abs/1506.01497) | 21.9 |    42.7   |   -  |
+|    SSD300   | 25.2 |    43.1   | 26.1 |
+|    YOLOv2   | 21.6 |     44    | 19.2 |
+|   **Ours**    |**25.3**| **44.5**   | **25.9** |
+
+### For skeleton position localization
+
+For skeleton position localization, we use [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) to detection skeletion human. To evaluate this model we used [MS-COCO2015](https://cocodataset.org/#home) datasets. Result shown in Table 2.
+
+**Table 2. Evaluation results of skeleton position localization compared with 2 other models.**
+|     Models    |  AP@0.5  |  AP@0.75 | AP medium | Ap large |
+|:-------------:|:--------:|:--------:|:---------:|----------|
+| [AlphaPose]() |   89.2   |   79.1   |     69    | 78.6     |
+|     Detectron Mask-RCNN    |   25.2   |   43.1   |    26.1   | 68.2     |
+|    **Ours**   | **88.0** | **73.1** |  **62.2** | **78.6** |
+
+Beside, we also use FPS and GPU Memory to evluate this. Result shown in Table 3 for Multi people and table 4 for single people.
+
+**Table 3. Results in Multi-people**
+|     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
+|:-------------:|:--------:|:--------:|
+| AlphaPose |   73.4%   |   1.15   |
+|    **Ours**   | **21.3%** | **18.39** |
+
+**Table 4. Results in Single-people**
+|     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
+|:-------------:|:--------:|:--------:|
+| AlphaPose |   60.3%   |   23.71   |
+|    **Ours**   | **21.3%** | **18.77** |
+
+### For recognition 
 # Installation
 
 ### With Python Base
@@ -85,66 +118,11 @@ Example: docker run -p 8080:8080 nguyendat135/trackingstudents
 2. After you can access it with ```http://localhost:8080/``` or with other laptop or smartphone in same network is ```http://192.168.1.44:8080```
 3. To trainning model you read ```Hướng dẫn sử dụng``` in tab ```Tổng quan```
 # Structures
-``` bash
-Tracking_Students
-+---.idea
-¦   +---inspectionProfiles
-+---Action
-¦   +---training
-¦   +---__pycache__
-+---Auth
-¦   +---__pycache__
-+---Dataset
-¦   +---FaceData
-+---graph_models
-¦   +---mobilenet_thin
-¦   +---VGG_origin
-+---Models
-+---Pose
-¦   +---graph_models
-¦   ¦   +---mobilenet_thin
-¦   ¦   +---VGG_origin
-¦   +---__pycache__
-+---profile_detection
-¦   +---haarcascades
-¦   +---__pycache__
-+---src
-¦   +---Action
-¦   ¦   +---training
-¦   ¦   +---__pycache__
-¦   +---align
-¦   ¦   +---__pycache__
-¦   +---Auth
-¦   ¦   +---__pycache__
-¦   +---FCRN
-¦   +---generative
-¦   ¦   +---models
-¦   +---models
-¦   +---Pose
-¦   ¦   +---graph_models
-¦   ¦   ¦   +---mobilenet_thin
-¦   ¦   ¦   +---VGG_origin
-¦   ¦   +---__pycache__
-¦   +---QSTP
-¦   +---SoNguoi
-¦   +---Tracking
-¦   ¦   +---deep_sort
-¦   ¦   ¦   +---__pycache__
-¦   ¦   +---graph_model
-¦   ¦   +---__pycache__
-¦   +---ViPham
-¦   +---__pycache__
-+---test
-+---test_out
-+---Tracking
-¦   +---deep_sort
-¦   ¦   +---__pycache__
-¦   +---graph_model
-¦   +---__pycache__
-+---trained
-+---ViPham
-+---__pycache__
-```
+**Structures for all models**
+<p align="center">
+    <img src="github/image/structure.png" width="500">
+    <br>
+</p>
 
 # Send Us FeedBack
 Our project is open source for research purposes, and we want to improve it! So let us know (create a new GitHub issue or pull request, email us, etc.) if you...
