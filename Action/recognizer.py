@@ -2,20 +2,19 @@
 import numpy as np
 import cv2 as cv
 from pathlib import Path
-from Tracking.deep_sort import preprocessing
-from Tracking.deep_sort.nn_matching import NearestNeighborDistanceMetric
-from Tracking.deep_sort.detection import Detection
-from Tracking import generate_dets as gdet
-from Tracking.deep_sort.tracker import Tracker
+from Detection.deep_sort import preprocessing
+from Detection.deep_sort.nn_matching import NearestNeighborDistanceMetric
+from Detection.deep_sort.detection import Detection
+from Detection import generate_dets as gdet
+from Detection.deep_sort.tracker import Tracker
 from keras.models import load_model
 from .action_enum import Actions
 import os
 
 
-# Use Deep-sort(Simple Online and Realtime Tracking)
+# Use Deep-sort(Simple Online and Realtime Detection)
 # To track multi-person for multi-person actions recognition
 
-# 定义基本参数
 file_path = Path.cwd()
 clip_length = 15
 max_cosine_distance = 0.3
@@ -23,13 +22,14 @@ nn_budget = None
 nms_max_overlap = 1.0
 
 # 初始化deep_sort
-model_filename = str(file_path/'Tracking/graph_model/mars-small128.pb')
+model_filename = str(file_path/'Detection/graph_model/mars-small128.pb')
 encoder = gdet.create_box_encoder(model_filename, batch_size=1)
 metric = NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
 tracker = Tracker(metric)
 
 # track_box颜色
 trk_clr = (0, 255, 0)
+trk_clr_operate = (0, 0, 255)
 
 
 # class ActionRecognizer(object):
@@ -160,14 +160,22 @@ def framewise_recognize(pose, pretrained_model):
                 # 显示动作类别
                 cv.putText(frame, init_label, (xmin + 80, ymin - 45), cv.FONT_HERSHEY_SIMPLEX, 1, trk_clr, 2)
                 # 异常预警(under scene)
-                if init_label == 'operate':
-                    #frame_count += 1
-                    cv.putText(frame, 'WARNING: someone is falling down!', (20, 60), cv.FONT_HERSHEY_SIMPLEX,
-                               1.5, (0, 0, 255), 1)
-                    # output_folder='ViPham'
-                    # frame_filename = os.path.join(output_folder, f"{init_label}.png")
-                    # cv.imwrite(frame_filename, frame)
-            # 画track_box
-            cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), trk_clr, 2)
+                if init_label == 'NemPhao':
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), trk_clr_operate, 2)
+                elif init_label=="QuayTrai":
+                    #(255 165 0)
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), (255,165,0), 2)
+                elif init_label=="QuayPhai":
+                    #(238 18 137)
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), (238, 18, 137), 2)
+                elif init_label=="DungDay":
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), (0,255,255), 2)
+                elif init_label=="QuaySau":
+                    #(238 232 170)
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), (238,232,170), 2)
+                else:
+                    cv.rectangle(frame, (xmin - 10, ymin - 30), (xmax + 10, ymax), trk_clr, 2)
+                cv.putText(frame, init_label, (xmin + 80, ymin - 45), cv.FONT_HERSHEY_SIMPLEX, 1, trk_clr, 2)
+
     return frame,init_label
 

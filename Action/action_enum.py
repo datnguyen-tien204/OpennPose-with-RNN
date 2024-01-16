@@ -12,8 +12,9 @@ class Actions(Enum):
     # wave = 3
 
     # framewise_recognition_under_scene.h5
-    stand = 0
-    walk = 1
-    operate = 2
-    fall_down = 3
-    # run = 4
+    BinhThuong = 0
+    QuayTrai = 1
+    QuayPhai = 2
+    DungDay = 3
+    NemPhao = 4
+    QuaySau = 5 #Mau nau nhat
