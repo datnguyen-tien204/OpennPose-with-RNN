@@ -14,7 +14,7 @@
 
 # Introduction
 
-This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr.Minh Chuan-Pham and Dr.Quoc Viet-Hoang supported for this project. This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, China, among others. Some universities such as Tsinghua University, Peking University, Standford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
+This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr. Minh Chuan-Pham and Dr. Quoc Viet-Hoang supported for this project. This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, China, among others. Some universities such as Tsinghua University, Peking University, Stanford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
 
 # Results
 ### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Network)
