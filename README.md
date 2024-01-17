@@ -130,11 +130,11 @@ python file_requirements.py
 
 # Send Us FeedBack
 Our project is open source for research purposes, and we want to improve it! So let us know (create a new GitHub issue or pull request, email us, etc.) if you...
-1. Find/fix any bug (in functionality or speed) or know how to speed up or improve any part of Students Tracking.
+1. Find/fix any bug (in functionality or speed) or know how to speed up or improve any part of OpenPoseRNN.
 2. Want to add/show some cool functionality/demo/project made on top of Students Tracking. We can add your project link to your [Issue](https://github.com/datnguyen-tien204/Tracking_Students/issues)
 
 # Thanks
-Thank you for the guidance of PhD. Minh Chuan Pham in the process of creating this project, as well as the evaluation board consisting of PhD. Quoc Viet Hoang and PhD. Dinh Chien Nguyen, who helped us improve the results and provided feedback for this project.
+Thank you for the guidance of Dr.Minh Chuan-Pham in the process of creating this project, as well as the evaluation board consisting of Dr.Quoc Viet-Hoang, who helped us improve the results and provided feedback for this project.
 
 # License
 This project is freely available for free non-commercial use. If it useful you can give 1 star. Thanks for using.
