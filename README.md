@@ -25,7 +25,7 @@ This project provides an implementation anomaly detection of OpenPose + RNN. For
 </p>
 
 ### For Human Detection
-For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is slpit from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
+For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is split from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
 
 **Table 1. Comparison resukt of human detection in images with 3 other models**
 |    Models   | Avg. | Precision |  IoU |
