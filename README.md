@@ -2,7 +2,7 @@
 [English](README.md) | [简体中文](README.zh-CN.md) | [Tiếng việt](README.vietnam-vn.md)
 
 ## Contents
-1. [Introduction](#introduction)
+1. [OpenPose with Recurrent Neural Network](#introduction)
 2. [Results](#results)
 3. [Installation](#installation)
 4. [Quick Start Overview](#quick-start-overview)
@@ -12,18 +12,12 @@
 8. [License](#license)
 
 
-# OpenPose with Recurrent Neural Network
-
-This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model
-as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr.Minh Chuan-Pham and Dr.Quoc Viet-Hoang supported for this project
 # Introduction
-### Tracking People
-Another field that is rapidly developing and showing even greater potential in the future is the detection of cheating among candidates using AI. When operational, this system marks and captures images if it detects any anomalies or violations, sending them to Telegram for verification of the misconduct. The reliability of this system is currently at a credible level and is undergoing further development and testing.
 
-This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, among others. Some universities such as Tsinghua University, Peking University, Standford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
+This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr.Minh Chuan-Pham and Dr.Quoc Viet-Hoang supported for this project. This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, among others. Some universities such as Tsinghua University, Peking University, Standford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
 
 # Results
-### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Netword)
+### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Network)
 <p align="center">
     <img src="github/video/video_demo.gif" width="1000">
     <br>
@@ -67,6 +61,21 @@ Beside, we also use FPS and GPU Memory to evluate this. Result shown in Table 3 
 |    **Ours**   | **21.3%** | **18.77** |
 
 ### For recognition 
+We used [Recurrrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network) (RNN) to classify action of attendance in room. To evaluate this part we use 2 metrics are Confusion Matrix and Receiver operating characteristic (ROC). Result shown in [Figure 1](github/image/confMatrix.jpg) and [Figure 2](github/image/RocCurves)
+
+<p align="center">
+    <img src="github/image/confMatrix.jpg" width="1000">
+    <br>
+    <sup>Fig 1. Result of all label with<a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank"><i> Confusion Matrix  </i></a>
+</p>
+
+<p align="center">
+    <img src="github/image/RocCurves.png" width="1000">
+    <br>
+    <sup>Fig 2. Result of all label with<a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc" target="_blank"><i> ROC  </i></a>
+</p>
+
+        
 # Installation
 
 ### With Python Base
@@ -103,20 +112,15 @@ python file_requirements.py
 # Quick Start Overview
 ### With Python Base Environments and Anaconda Environment
 1. Quick Run
-- You can run this file ```app.py``` to start this project. 
-- Input if login  ```username:abc``` and ```password:abc``` to login
-- The IP and Port you can access is ```http://localhost:8080/``` or with other laptop or smartphone in same network is ```http://192.168.1.44:8080```
-2. To trainning model you read ```Hướng dẫn sử dụng``` in tab ```Tổng quan```
-
-### With Docker
-1. Quick Run
-You access this project with this command
-```bash
-docker run -p 8080:8080 [name_you_choose in Installation]
-Example: docker run -p 8080:8080 nguyendat135/trackingstudents
-```
-2. After you can access it with ```http://localhost:8080/``` or with other laptop or smartphone in same network is ```http://192.168.1.44:8080```
-3. To trainning model you read ```Hướng dẫn sử dụng``` in tab ```Tổng quan```
+ - You can run this file ```main.py``` to start this project. 
+2. [Optinal]To trainning model you using ``create_data.py``` to export data points and move to folder ```Action\trainning``` and using .ipnb file ```train.ipnb``` to train.
+3. [Optinal] Using VGG_origin can be slow, if you don't have GPU you can change model to ```mobilenet``` to predict faster.
+   - To change model to ```mobilenet```, navigation to file ```main.py``` in main folder.
+   - In line 14, change ``` estimator = load_pretrain_model('VGG_origin')``` to ```estimator = 
+ load_pretrain_model('mobilenet_thin')```
+   
+4.[Optinal] To use your weight, you can change it in ```main.py```, in line 15 change ```action_classifier = load_action_premodel('open_pose2\Action\framewise_recognition_under_scene.h5')``` to ```action_classifier = load_action_premodel('path_to_your_weights')```
+  
 # Structures
 **Structures for all models**
 <p align="center">
