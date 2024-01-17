@@ -113,7 +113,7 @@ python file_requirements.py
 ### With Python Base Environments and Anaconda Environment
 1. Quick Run
  - You can run this file ```main.py``` to start this project. 
-2. [Optinal]To trainning model you using ``create_data.py``` to export data points and move to folder ```Action\trainning``` and using .ipnb file ```train.ipnb``` to train.
+2. [Optinal]To trainning model you using ```create_data.py``` to export data points and move to folder ```Action\trainning``` and using .ipnb file ```train.ipnb``` to train.
 3. [Optinal] Using VGG_origin can be slow, if you don't have GPU you can change model to ```mobilenet``` to predict faster.
    - To change model to ```mobilenet```, navigation to file ```main.py``` in main folder.
    - In line 14, change ``` estimator = load_pretrain_model('VGG_origin')``` to ```estimator = 
