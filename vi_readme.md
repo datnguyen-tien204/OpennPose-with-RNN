@@ -14,20 +14,20 @@
 
 # Introduction
 
-This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr. Minh Chuan-Pham and Dr. Quoc Viet-Hoang supported for this project. This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, China, among others. Some universities such as Tsinghua University, Peking University, Stanford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
+Bài báo này cung cấp một cách thực hiện phát hiện bất thường với sự kết hợp giữa OpenPose và RNN. Để đơn giản, chúng tôi gọi mô hình này là OpenPoseRNN trong phần còn lại của readme này. Và chúng tôi cũng cảm ơn Tiến sĩ Phạm Minh Chuẩn và Tiến sĩ Hoàng Quốc Việt đã hỗ trợ cho dự án này. Hệ thống dựa trên học sâu này đang được áp dụng ở các quốc gia phát triển trên toàn thế giới như Anh, Pháp, Hoa Kỳ và các quốc gia châu Á khác như Nhật Bản, Hàn Quốc, Trung Quốc, v.v. Một số trường đại học như Đại học Thanh Hoa, Đại học Bắc Kinh, Đại học Stanford,… đã sử dụng công nghệ để chống gian lận trong kỳ thi. Nó đang được triển khai phối hợp với các giám thị kỳ thi để đạt hiệu quả cao nhất và đảm bảo công bằng tối đa trong các kỳ thi.
 
 # Results
-### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Network)
+### Tổng quan phát hiện gian lận ( sử dụng OpenPose và Yolov3+ mạng thần kinh hồi quy)
 <p align="center">
     <img src="github/video/video_demo.gif" width="1000">
     <br>
-    <sup>Testing with 12422TN class <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><i> on OpenPose </i></a>
+    <sup>Kiểm tra với lớp 12422TN class <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><i> dùng OpenPose </i></a>
 </p>
 
-### For Human Detection
-For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is split from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
+### Phát hiện người
+Trong phần này, nhóm chúng tôi sử dụng [YOLOv3](https://github.com/ultralytics/yolov3) để phát hiện người trong phòng thi. Để đánh giá mô hình này, chúng tôi sử dụng một phần dữ liệu được tách ra từ bộ dữ liệu [MS-COCO 2017](https://cocodataset.org/#home) . Kết quả thể hiện trong bảng 1. 
 
-**Table 1. Comparison resukt of human detection in images with 3 other models**
+**Table 1. So sánh mô hình với 2 mô hình khác**
 |    Models   | Avg. | Precision |  IoU |
 |:-----------:|:----:|:---------:|:----:|
 | [Faster-RCNN](https://arxiv.org/abs/1506.01497) | 21.9 |    42.7   |   -  |
@@ -35,26 +35,26 @@ For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detecti
 |    YOLOv2   | 21.6 |     44    | 19.2 |
 |   **Ours**    |**25.3**| **44.5**   | **25.9** |
 
-### For skeleton position localization
+### Phát hiện vị trí khung xương
 
-For skeleton position localization, we use [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) to detection skeletion human. To evaluate this model we used [MS-COCO2015](https://cocodataset.org/#home) datasets. Result shown in Table 2.
+Để phát hiện vị trí của các khung xương, nhóm chúng tôi sử dụng [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) để phát hiện khung xương người và trích xuất chúng. Để đánh giá chi phần phát hiện khung xương, nhóm chúng tôi sử dụng bộ dữ liệu [MS-COCO2015](https://cocodataset.org/#home). Kết quả thể hiện trong bảng 1.
 
-**Table 2. Evaluation results of skeleton position localization compared with 2 other models.**
+**Bảng 2. Đánh giá mô hình phát hiện khung xương với 2 mô hình khác**
 |     Models    |  AP@0.5  |  AP@0.75 | AP medium | Ap large |
 |:-------------:|:--------:|:--------:|:---------:|----------|
 | [AlphaPose]() |   89.2   |   79.1   |     69    | 78.6     |
 |     Detectron Mask-RCNN    |   25.2   |   43.1   |    26.1   | 68.2     |
 |    **Ours**   | **88.0** | **73.1** |  **62.2** | **78.6** |
 
-Beside, we also use FPS and GPU Memory to evluate this. Result shown in Table 3 for Multi people and table 4 for single people.
+Ngoài ra, nhóm chúng tôi cũng sử dụng . Kết quả thể hiện tại bảng 3 cho nhiều người và bảng 4 cho 1 người.
 
-**Table 3. Results in Multi-people**
+**Bảng 3. Results in Multi-people**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   73.4%   |   1.15   |
 |    **Ours**   | **21.3%** | **18.39** |
 
-**Table 4. Results in Single-people**
+**Bảng 4. Results in Single-people**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   60.3%   |   23.71   |
