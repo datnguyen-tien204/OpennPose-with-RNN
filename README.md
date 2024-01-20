@@ -27,7 +27,7 @@ This project provides an implementation anomaly detection of OpenPose + RNN. For
 ### For Human Detection
 For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is split from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
 
-**Table 1. Comparison resukt of human detection in images with 3 other models**
+**Table 1. Comparison result of human detection in images with 3 other models**
 |    Models   | Avg. | Precision |  IoU |
 |:-----------:|:----:|:---------:|:----:|
 | [Faster-RCNN](https://arxiv.org/abs/1506.01497) | 21.9 |    42.7   |   -  |
@@ -37,7 +37,7 @@ For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detecti
 
 ### For skeleton position localization
 
-For skeleton position localization, we use [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) to detection skeletion human. To evaluate this model we used [MS-COCO2015](https://cocodataset.org/#home) datasets. Result shown in Table 2.
+For skeleton position localization, we use [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) to detection skeleton human. To evaluate this model we used [MS-COCO2015](https://cocodataset.org/#home) datasets. Result shown in Table 2.
 
 **Table 2. Evaluation results of skeleton position localization compared with 2 other models.**
 |     Models    |  AP@0.5  |  AP@0.75 | AP medium | Ap large |
