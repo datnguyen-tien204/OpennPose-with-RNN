@@ -1,5 +1,5 @@
 ![header](github/image/daaf2d95fb02505c0913.jpg)
-[English](README.md) | [简体中文](README.zh-CN.md) | [Tiếng việt](README.vietnam-vn.md)
+[English](README.md) | [简体中文](cn_readme.md) | [Tiếng việt](README.vietnam-vn.md)
 
 ## Contents
 1. [OpenPose with Recurrent Neural Network](#introduction)
@@ -14,20 +14,20 @@
 
 # Introduction
 
-This project provides an implementation anomaly detection of OpenPose + RNN. For simplicity, we refer to this model as OpenPoseRNN throughout the rest of this readme. And we also thank to Dr. Minh Chuan-Pham and Dr. Quoc Viet-Hoang supported for this project. This deep learning-based system is being applied in developed countries worldwide such as the UK, France, the USA, and various Asian countries like Japan, South Korea, China, among others. Some universities such as Tsinghua University, Peking University, Stanford University,... used technology to anti-cheating at examination. It is being implemented in collaboration with examination invigilators to achieve the highest effectiveness and ensure the utmost fairness in examinations.
+此项目提供了OpenPose + RNN的异常检测实现。为了简单起见，我们在此自述文件的其余部分中将此模型称为OpenPoseRNN。我们还要感谢Minh Chuan-Pham博士和Quoc Viet-Hoang博士对此项目的支持。这种基于深度学习的系统正在全球发达国家如英国、法国、美国以及日本、韩国、中国等亚洲国家中应用。一些大学如清华大学、北京大学、斯坦福大学等使用技术防止考试作弊。它正在与考试监考员合作实施，以达到最高的效果并确保考试的公平性。
 
 # Results
-### Summary Cheating Recognition ( using OpenPose + Yolov3+ Recurrent Neural Network)
+### 作弊识别总结（使用OpenPose + Yolov3+ 循环神经网络）
 <p align="center">
     <img src="github/video/video_demo.gif" width="1000">
     <br>
-    <sup>Testing with 12422TN class <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><i> on OpenPose </i></a>
+    <sup>使用12422TN类进行测试 <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><i> on OpenPose </i></a>
 </p>
 
 ### For Human Detection
-For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detection human in rooms. To evaluation this model we use trainval35k set, which is split from the original [MS-COCO 2017](https://cocodataset.org/#home) dataset. Result shown in Table 1. 
+对于这部分，我们使用 [YOLOv3](https://github.com/ultralytics/yolov3) 用于检测房间中的人。为了评估这个模型，我们使用从原始数据集分割出来的trainval35k集。 [MS-COCO 2017](https://cocodataset.org/#home)  数据集. 结果显示在表1中。
 
-**Table 1. Comparison resukt of human detection in images with 3 other models**
+**表 1. 与其他3种模型的人体检测图像的比较结果**
 |    Models   | Avg. | Precision |  IoU |
 |:-----------:|:----:|:---------:|:----:|
 | [Faster-RCNN](https://arxiv.org/abs/1506.01497) | 21.9 |    42.7   |   -  |
@@ -35,44 +35,44 @@ For this part, we use [YOLOv3](https://github.com/ultralytics/yolov3) to detecti
 |    YOLOv2   | 21.6 |     44    | 19.2 |
 |   **Ours**    |**25.3**| **44.5**   | **25.9** |
 
-### For skeleton position localization
+### 用于骨架位置定位
 
-For skeleton position localization, we use [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) to detection skeletion human. To evaluate this model we used [MS-COCO2015](https://cocodataset.org/#home) datasets. Result shown in Table 2.
+用于骨架位置定位, 我们使用 [OpenPose]("https://github.com/CMU-Perceptual-Computing-Lab/openpose) 为了检测人体骨骼，我们使用了这个模型进行评估 [MS-COCO2015](https://cocodataset.org/#home) 数据集。结果显示在表2中。
 
-**Table 2. Evaluation results of skeleton position localization compared with 2 other models.**
+**表 2. 与其他两种模型相比，骨架位置定位的评估结果**
 |     Models    |  AP@0.5  |  AP@0.75 | AP medium | Ap large |
 |:-------------:|:--------:|:--------:|:---------:|----------|
 | [AlphaPose]() |   89.2   |   79.1   |     69    | 78.6     |
 |     Detectron Mask-RCNN    |   25.2   |   43.1   |    26.1   | 68.2     |
 |    **Ours**   | **88.0** | **73.1** |  **62.2** | **78.6** |
 
-Beside, we also use FPS and GPU Memory to evluate this. Result shown in Table 3 for Multi people and table 4 for single people.
+此外，我们还使用 FPS 和 GPU 内存来评估这一点。结果显示在表 3 中，用于多人和表 4 中的单人.
 
-**Table 3. Results in Multi-people**
+**表 3. 多人结果**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   73.4%   |   1.15   |
 |    **Ours**   | **21.3%** | **18.39** |
 
-**Table 4. Results in Single-people**
+**表 4. 单人结果**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   60.3%   |   23.71   |
 |    **Ours**   | **21.3%** | **18.77** |
 
 ### For recognition 
-We used [Recurrrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network) (RNN) to classify action of attendance in room. To evaluate this part we use 2 metrics are Confusion Matrix and Receiver operating characteristic (ROC). Result shown in [Figure 1](github/image/confMatrix.jpg) and [Figure 2](github/image/RocCurves)
+我们用了 [Recurrrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network) 我们使用循环神经网络(RNN)来对考场中的行为进行分类。为了评估这部分，我们使用了两个指标，即混淆矩阵和接收者操作特征曲线(ROC)。结果如下所示 [图 1](github/image/confMatrix.jpg) and [图 1](github/image/RocCurves)
 
 <p align="center">
     <img src="github/image/confMatrix.jpg" width="1000">
     <br>
-    <sup>Fig 1. Result of all label with<a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank"><i> Confusion Matrix  </i></a>
+    <sup>图 1. 所有标签的结果<a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank"><i> Confusion Matrix  </i></a>
 </p>
 
 <p align="center">
     <img src="github/image/RocCurves.png" width="1000">
     <br>
-    <sup>Fig 2. Result of all label with<a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc" target="_blank"><i> ROC  </i></a>
+    <sup>图 2. 所有标签的结果 <a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc" target="_blank"><i> ROC  </i></a>
 </p>
 
         
