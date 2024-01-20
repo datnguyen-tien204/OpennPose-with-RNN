@@ -78,63 +78,64 @@
         
 # Installation
 
-### With Python Base
-Requirements python >= 3.7
-1. Install dependences library
+### 使用Python Base
+要求 python >= 3.7
+1. 安装依赖库
  ```bash
  pip install -r requirements.txt
 ```
-2. Install dependences files
-- Change directory to ``` OpenPose/graph_models/VGG_origin```, you can change directory with this command ```cd OpenPose/graph_models/VGG_origin ```
-- After you must run ``` file_requirements.py ``` or
+2. 安装依赖文件
+- 切换目录到 ``` OpenPose/graph_models/VGG_origin```, 你可以用这个命令切换目录 ```cd OpenPose/graph_models/VGG_origin ```
+- 然后你必须运行 ``` file_requirements.py ``` 或者
  ``` bash
 python file_requirements.py
 ```
-3. Install dependences files with other steps ( Optional )
-- If you step 2 not successfully you can download weights from [Google Drive](https://drive.google.com/drive/folders/1Y4coXLsVzCXYuCKpyDfQBqpHH8Aj-Yg5?usp=sharing)
-- Move folder ```graph_models``` downloaded to ```OpenPose\graph_models``` 
+3. 用其他步骤安装依赖文件 ( 可选 )
+- 如果你的第二步没有成功，你可以从 [Google Drive](https://drive.google.com/drive/folders/1Y4coXLsVzCXYuCKpyDfQBqpHH8Aj-Yg5?usp=sharing)下载权重.
+- 把下载的 ```graph_models``` 文件夹移动到 ```OpenPose\graph_models``` 
 
-### With Anaconda 
-1. Install dependences library
-   - You can load dependences library with ``` openpose.yaml``` file.
-   - You can find ```openpose.yaml``` file in folder ```Environment```
-2. Install dependences files
-- Change directory to ``` OpenPose/graph_models/VGG_origin```, you can change directory with this command ```cd OpenPose/graph_models/VGG_origin ```
-- After you must run ``` file_requirements.py ``` or
+### 使用 Anaconda
+1. 安装依赖库
+   - 安装依赖库 ``` openpose.yaml``` 文件加载依赖库。.
+   - 你可以在 ```Environment``` 文件夹里找到 ```openpose.yaml``` 文件
+
+2. 安装依赖文件
+- 切换目录到 ``` OpenPose/graph_models/VGG_origin```, 你可以用这个命令切换目录 ```cd OpenPose/graph_models/VGG_origin ```
+- 然后你必须运行 ``` file_requirements.py ``` 或者
  ``` bash
 python file_requirements.py
 ```
-3. Install dependences files with other steps ( Optional )
-- If you step 2 not successfully you can download weights from [Google Drive](https://drive.google.com/drive/folders/1Y4coXLsVzCXYuCKpyDfQBqpHH8Aj-Yg5?usp=sharing)
-- Move folder ```graph_models``` downloaded to ```OpenPose\graph_models``
+3. 用其他步骤安装依赖文件 ( 可选 )
+- 如果你的第二步没有成功，你可以从 [Google Drive](https://drive.google.com/drive/folders/1Y4coXLsVzCXYuCKpyDfQBqpHH8Aj-Yg5?usp=sharing)下载权重.
+- 把下载的 ```graph_models``` 文件夹移动到 ```OpenPose\graph_models``` 
 
 
 # Quick Start Overview
-### With Python Base Environments and Anaconda Environment
-1. Quick Run
- - You can run this file ```main.py``` to start this project. 
-2. [Optinal]To trainning model you using ```create_data.py``` to export data points and move to folder ```Action\trainning``` and using .ipnb file ```train.ipnb``` to train.
-3. [Optinal] Using VGG_origin can be slow, if you don't have GPU you can change model to ```mobilenet``` to predict faster.
-   - To change model to ```mobilenet```, navigation to file ```main.py``` in main folder.
-   - In line 14, change ``` estimator = load_pretrain_model('VGG_origin')``` to ```estimator = 
- load_pretrain_model('mobilenet_thin')```
+### 使用Python基础环境和Anaconda环境
+1. 快速运行
+- 您可以运行此文件main.py来启动此项目。
+2. [可选] 要训练模型，您可以使用 ```create_data.py``` 导出数据点并移动到文件夹 ```Action\trainning```，并使用 .ipnb文件 ```train.ipnb``` 进行训练。
+3. [可选] 使用 ```VGG_origin``` 可能会很慢，如果您没有GPU，您可以将模型更改为 ```mobilenet``` 以更快地预测。
+- 要将模型更改为 ```mobilenet```，导航到主文件夹中的文件 ```main.py```。
+- 在第 14 行，将 ```estimator = load_pretrain_model('VGG_origin')``` 更改为 ```estimator =  load_pretrain_model('mobilenet_thin')```
    
-4.[Optinal] To use your weight, you can change it in ```main.py```, in line 15 change ```action_classifier = load_action_premodel('open_pose2\Action\framewise_recognition_under_scene.h5')``` to ```action_classifier = load_action_premodel('path_to_your_weights')```
+4..[可选] 要使用您的权重，您可以在 ```main.py``` 中更改它，在第 15 行将 ```action_classifier = load_action_premodel('open_pose2\Action\framewise_recognition_under_scene.h5') ```更改为 ```action_classifier = load_action_premodel('path_to_your_weights')```
   
 # Structures
-**Structures for all models**
+**所有模型的结构**
 <p align="center">
     <img src="github/image/structure.png" width="500">
     <br>
 </p>
 
 # Send Us FeedBack
-Our project is open source for research purposes, and we want to improve it! So let us know (create a new GitHub issue or pull request, email us, etc.) if you...
-1. Find/fix any bug (in functionality or speed) or know how to speed up or improve any part of OpenPoseRNN.
-2. Want to add/show some cool functionality/demo/project made on top of Students Tracking. We can add your project link to your [Issue](https://github.com/datnguyen-tien204/Tracking_Students/issues)
+我们的项目是为了研究目的而开源的，我们想要改进它！所以如果你…
+
+1. 发现/修复了任何 bug (在功能或速度方面) 或者知道如何加速或改进 OpenPoseRNN 的任何部分。
+2. 想要添加/展示一些基于学生跟踪的酷功能/演示/项目。我们可以把你的项目链接添加到你的 [Issue](https://github.com/datnguyen-tien204/OpennPose-with-RNN/issues)
 
 # Thanks
-Thank you for the guidance of Dr.Minh Chuan-Pham in the process of creating this project, as well as the evaluation board consisting of Dr.Quoc Viet-Hoang, who helped us improve the results and provided feedback for this project.
+感谢Dr.Minh Chuan-Pham在创建这个项目的过程中的指导，以及由Dr.Quoc Viet-Hoang组成的评审委员会，他们帮助我们改进了结果，并为这个项目提供了反馈。
 
 # License
-This project is freely available for free non-commercial use. If it useful you can give 1 star. Thanks for using.
+这是一个免费的非商业用途的项目。如果你觉得它有用，你可以给它一个星星。感谢您的使用。
