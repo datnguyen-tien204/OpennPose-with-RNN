@@ -48,13 +48,13 @@ Trong phần này, nhóm chúng tôi sử dụng [YOLOv3](https://github.com/ult
 
 Ngoài ra, nhóm chúng tôi cũng sử dụng . Kết quả thể hiện tại bảng 3 cho nhiều người và bảng 4 cho 1 người.
 
-**Bảng 3. Results in Multi-people**
+**Bảng 3. Kết quả trong trường hợp nhiều người**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   73.4%   |   1.15   |
 |    **Ours**   | **21.3%** | **18.39** |
 
-**Bảng 4. Results in Single-people**
+**Bảng 4. Kết quả trong trường hợp một người**
 |     Models    |  GPU Memory Usage  |  FPS(Frame Per second  |
 |:-------------:|:--------:|:--------:|
 | AlphaPose |   60.3%   |   23.71   |
