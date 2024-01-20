@@ -1,5 +1,5 @@
 ![header](github/image/daaf2d95fb02505c0913.jpg)
-[English](README.md) | [简体中文](README.zh-CN.md) | [Tiếng việt](README.vietnam-vn.md)
+[English](README.md) | [简体中文](cn_readme.md) | [Tiếng việt](vi_readme.md)
 
 ## Contents
 1. [OpenPose with Recurrent Neural Network](#introduction)
