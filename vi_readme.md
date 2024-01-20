@@ -27,7 +27,7 @@ Bài báo này cung cấp một cách thực hiện phát hiện bất thường
 ### Phát hiện người
 Trong phần này, nhóm chúng tôi sử dụng [YOLOv3](https://github.com/ultralytics/yolov3) để phát hiện người trong phòng thi. Để đánh giá mô hình này, chúng tôi sử dụng một phần dữ liệu được tách ra từ bộ dữ liệu [MS-COCO 2017](https://cocodataset.org/#home) . Kết quả thể hiện trong bảng 1. 
 
-**Table 1. So sánh mô hình với 2 mô hình khác**
+**Bảng 1. So sánh mô hình với 2 mô hình khác**
 |    Models   | Avg. | Precision |  IoU |
 |:-----------:|:----:|:---------:|:----:|
 | [Faster-RCNN](https://arxiv.org/abs/1506.01497) | 21.9 |    42.7   |   -  |
@@ -66,7 +66,7 @@ Nhóm chúng tôi dùng [Recurrrent Neural Network](https://en.wikipedia.org/wik
 <p align="center">
     <img src="github/image/confMatrix.jpg" width="1000">
     <br>
-    <sup>Bảng 1. Kết quả của tất cả các lớp với độ đo<a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank"><i> Confusion Matrix  </i></a>
+    <sup>Hình 1. Kết quả của tất cả các lớp với độ đo<a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank"><i> Confusion Matrix  </i></a>
 </p>
 
 <p align="center">
