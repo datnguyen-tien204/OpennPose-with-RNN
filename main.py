@@ -11,7 +11,7 @@ formatted_time = time.strftime("%d/%m/%Y %H:%M:%S", current_struct_time)
 
 
 # Load models
-estimator = load_pretrain_model('VGG_origin')
+estimator = load_pretrain_model('mobilenet_thin')
 action_classifier = load_action_premodel('open_pose2\Action\framewise_recognition_under_scene.h5')
 
 # Initialize parameters
