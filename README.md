@@ -79,7 +79,7 @@ We used [Recurrrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neur
 # Installation
 
 ### With Python Base
-Requirements python >= 3.7
+Requirements python >= 3.7 
 1. Install dependences library
  ```bash
  pip install -r requirements.txt
