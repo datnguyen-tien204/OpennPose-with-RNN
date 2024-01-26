@@ -135,10 +135,10 @@ Dự án của nhóm chúng tôi là mã nguồn mở, và chúng tôi muốn c�
 2. Muốn thêm/hiển thị một số chức năng/bản demo/dự án thú vị được thực hiện dựa trên Theo dõi Học sinh. Chúng tôi có thể thêm liên kết dự án của bạn vào [Issue](https://github.com/datnguyen-tien204/OpennPose-with-RNN/issues)
 
 # Thanks
-Cảm ơn sự hướng dẫn của TS. Phạm Minh Chuẩn trong quá trình tạo nên dự án này, cũng như tiến sĩ Hoàng Quốc Việt, người đã giúp chúng tôi cải thiện kết quả và đưa ra những phản hồi cho dự án này.
+Cảm ơn sự hướng dẫn của TS. Phạm Minh Chuẩn trong quá trình tạo nên dự án này, cũng như TS. Hoàng Quốc Việt, người đã giúp chúng tôi cải thiện kết quả và đưa ra những phản hồi cho dự án này.
 
 # License
 Dự án này được cung cấp miễn phí cho mục đích sử dụng phi thương mại. Nếu hữu ích bạn có thể cho 1 sao. Cảm ơn đã sử dụng
 
 # Exception
-Dự án này được tạo nên bởi một cựu học sinh trường THPT Trần Quang Khải. Nghiêm cấm học sinh trường [THPT Trần Quang Khải](http://thpttranquangkhai.hungyen.edu.vn/) và tất cả học sinh trường THPT khác thuộc Việt Nam sao chép, trích dẫn, dùng làm bài báo nghiên cứu khoa học, hoặc sử dụng dự án này làm dự án riêng dưới mọi người hình thức.
+Dự án này được tạo nên bởi một cựu học sinh trường THPT Trần Quang Khải. Nghiêm cấm học sinh trường [THPT Trần Quang Khải](http://thpttranquangkhai.hungyen.edu.vn/) và tất cả học sinh trường THPT khác thuộc Việt Nam sao chép, trích dẫn, dùng làm bài báo nghiên cứu khoa học, hoặc sử dụng dự án này làm dự án riêng dưới mọi hình thức.
