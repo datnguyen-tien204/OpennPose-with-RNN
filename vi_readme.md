@@ -141,4 +141,4 @@ Cảm ơn sự hướng dẫn của TS. Phạm Minh Chuẩn trong quá trình t�
 Dự án này được cung cấp miễn phí cho mục đích sử dụng phi thương mại. Nếu hữu ích bạn có thể cho 1 sao. Cảm ơn đã sử dụng
 
 # Exception
-Nghiêm cấm học sinh trường [THPT Trần Quang Khải](http://thpttranquangkhai.hungyen.edu.vn/) và tất cả học sinh trường THPT khác thuộc Việt Nam sao chép, trích dẫn, dùng làm bài báo nghiên cứu khoa học, hoặc sử dụng dự án này làm dự án riêng dưới mọi người hình thức.
+Dự án này được tạo nên bởi một cựu học sinh trường THPT Trần Quang Khải. Nghiêm cấm học sinh trường [THPT Trần Quang Khải](http://thpttranquangkhai.hungyen.edu.vn/) và tất cả học sinh trường THPT khác thuộc Việt Nam sao chép, trích dẫn, dùng làm bài báo nghiên cứu khoa học, hoặc sử dụng dự án này làm dự án riêng dưới mọi người hình thức.
