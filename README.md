@@ -10,7 +10,7 @@
 6. [Send Us Feedback!](#send-us-feedback)
 7. [Thanks](#thanks)
 8. [License](#license)
-9. Exception(#exception)
+9. [Exception](#exception)
 
 
 # Introduction
@@ -141,4 +141,4 @@ Thank you for the guidance of Dr.Minh Chuan-Pham in the process of creating this
 This project is freely available for free non-commercial use. If it useful you can give 1 star. Thanks for using.
 
 #Exception
-It is strictly forbidden for students of [Tran Quang Khai High School](http://thpttranquangkhai.hungyen.edu.vn/) and all other high school students in Vietnam to copy, quote, citation, use as a scientific research paper, or use this project as their own project under any form.
+This project was created by a former student of [Tran Quang Khai High School](http://thpttranquangkhai.hungyen.edu.vn/), Hung Yen. Students of [Tran Quang Khai High School](http://thpttranquangkhai.hungyen.edu.vn/) and all other high school students in Vietnam are prohibited from copying, quoting, using this project as a scientific research paper, or using this project as their own project under any circumstances.
